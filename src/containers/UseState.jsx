@@ -39,8 +39,12 @@ function UseState() {
             <DividingLine />
 
             <h2>使用 addEventListener 掛載</h2>
-            <p>由於batching機制不存在，setState就會是同步的。</p>
-            <p>所以畫面上的 count 的值會跟 console.log() 出來的值一樣</p>
+            <p>在React 17 以前 &rarr; 由於batching機制不存在，setState就會是同步的。</p>
+            <p>在React 17 以前 &rarr; 所以畫面上的 count 的值會跟 console.log() 出來的值一樣</p>
+
+            <p>在React 18 後 &rarr; 有batching機制，所以setState是非同步的。</p>
+            <p>在React 18 後 &rarr; 所以畫面上的 count 的值會比 console.log() 出來的值還要新</p>
+
             <div>count: {count}</div>
             <button id="countAdd" value={Number(count)}>
                 count + 1
